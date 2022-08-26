@@ -1,0 +1,4 @@
+#ignoring files
+idea/
+/out/   
+/.idea
