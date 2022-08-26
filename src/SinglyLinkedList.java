@@ -1,5 +1,5 @@
 
-public class dsa {
+public class SinglyLinkedList {
 
     Node head;
 
@@ -94,6 +94,41 @@ public class dsa {
 
     }
 
+    public int getLengthOfLinkedList() {
+
+        int count = 1;
+
+        Node temp = head;
+
+        if (temp == null) {
+            return 0;
+        }
+        while (temp.next != null) {
+
+            temp = temp.next;
+            count = count + 1;
+
+        }
+
+        return count;
+    }
+
+    public void findMiddleOfLinkedList() {
+
+        Node first = head;
+        Node second = first.next;
+
+        while (second != null) {
+
+            first = first.next;
+            second = second.next.next;
+
+        }
+
+        System.out.println("middle is :" + first.data);
+
+    }
+
     public void printList() {
 
         Node n = head;
@@ -108,12 +143,17 @@ public class dsa {
 
     public static void main(String[] args) {
 
-        dsa d = new dsa();
+        SinglyLinkedList d = new SinglyLinkedList();
 
         d.insert("1");
         d.insert("2");
         d.insert("3");
         d.insert("4");
+        d.insert("5");
+        d.insert("6");
+        d.insert("7");
+        d.insert("8");
+        d.insert("9");
 
         // d.insertAfter("21", d.head);
         // d.insertAfter("22", d.head);
@@ -126,8 +166,9 @@ public class dsa {
         // d.deleteFromBeginning(d.head);
 
         // d.deleteFromEnd(d.head);
-        d.deleteWithKey("1");
         d.printList();
+        System.out.println("lenth of list is " + d.getLengthOfLinkedList());
+        d.findMiddleOfLinkedList();
 
     }
 }
